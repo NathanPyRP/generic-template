@@ -5,27 +5,29 @@ import useAuth from "@/data/hook/useAuthData"
 
 export default function Autenticacao() {
 
-    const { usuario, loginGoogle } = useAuth()
+    const { cadastrar, login, loginGoogle } = useAuth()
 
-    const [erro, setErro] = useState(null)
+    const [erro, setErro] = useState<string | null>(null);
     const [modo, setModo] = useState<'login'|'cadastro'>('login')
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
 
-    function exibirErro(msg: any, tempoEmSegundos = 5) {
-        setErro(msg)
-        setTimeout(() => setErro(null), tempoEmSegundos * 1000)
-    }
+    function exibirErro(msg: string, tempoEmSegundos = 5) {
+        setErro(msg || null);
+        setTimeout(() => setErro(null), tempoEmSegundos * 1000);
+      }
 
-    function submeter() {
-        if(modo === 'login') {
-            console.log('login')
-            exibirErro('Ocorreu um erro no login!')
-        } else {
-            console.log('cadastrar')
-            exibirErro('Ocorreu um erro no cadastro!')
+      async function submeter() {
+        try {
+          if (modo === 'login' && login) {
+            await login(email, senha);
+          } else if (modo === 'cadastro' && cadastrar) {
+            await cadastrar(email, senha);
+          }
+        } catch (e: any) { // Defina um tipo mais específico se possível
+          exibirErro(e?.message ?? 'Erro desconhecido!');
         }
-    }
+      }
 
     return (
         <div className="flex h-screen items-center justify-center">
