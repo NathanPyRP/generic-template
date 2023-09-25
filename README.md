@@ -7,9 +7,9 @@ Para começar com este projeto, siga estas etapas:
 
 ## 1- Clone o repositório em sua máquina local:
 
-git clone https://github.com/your-username/admin-panel.git
+# git clone https://github.com/your-username/admin-panel.git
 
-cd admin-panel
+# cd admin-panel
 
 ## Instale as dependências do projeto:
 
