@@ -15,7 +15,7 @@ export default function ForcarAutenticacao(props:any) {
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `
-                                if(!document.cookie?.includes("admin-template-cod3r-auth")) {
+                                if(!document.cookie?.includes("admin-template-nathan-auth")) {
                                     window.location.href = "/autenticacao"
                                 }
                             `
