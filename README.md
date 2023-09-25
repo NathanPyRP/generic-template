@@ -11,19 +11,19 @@ Para começar com este projeto, siga estas etapas:
 
 ## Instale as dependências do projeto:
 
-# npm install
- or
-# yarn install
- or
-# pnpm install
+ npm install
+# or
+ yarn install
+# or
+ pnpm install
 
 ## Inicie o servidor de desenvolvimento:
 
-# npm run dev
- or
-# yarn dev
- or
-# pnpm dev
+ npm run dev
+# or
+ yarn dev
+# or
+ pnpm dev
 
 ## Abra seu navegador e navegue até http://localhost:3000 para ver o painel de administração em ação.
 
